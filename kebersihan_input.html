@@ -281,11 +281,6 @@
       </div>
       <div class="col-sm-6">
         <div class="row">
-          <div class="form-group">
-
-            <button class="btn btn-sm btn-primary  float-sm-end"  data-bs-toggle="modal" data-bs-target="#modal_kebersihan"><i class="nav-icon bi bi-emoji-heart-eyes"></i> Tambah Pelaksanaan Kebersihan</button>
-            <button class="btn btn-sm btn-danger  float-sm-end"   style="margin-right:5px"   data-bs-toggle="modal" data-bs-target="#modal_laporan_kerusakan"><i class="nav-icon bi bi-envelope-plus"></i> Tambah Laporan Kerusakan</button></div>
-          </div>
         </div>
       </div>
       <!--end::Row-->
@@ -302,92 +297,112 @@
       <!--begin::Row-->
 
       <div class="row mb-3">
-        <div class="col-md-4 mb-3">
+        <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Tata Usaha dan Keuangan</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                  <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                  <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-lte-toggle="card-remove">
-                  <i class="bi bi-x-lg"></i>
-                </button>
-              </div>
+              <h3 class="card-title">Form Laporan Kebersihan</h3>
+               
             </div>
             <!-- /.card-header -->
-            <div class="card-body p-0">
-              <div class="table-responsive">
-                <div style="height: 250px; padding: 10px; overflow: auto; transform: translate(0, 0);" id="pemohon_belum_ttd">
-
+            <div class="card-body">
+              <form>
+              <div class="mb-3 row">
+                <label class="col-sm-3 text-sm-end">Nama Ruangan/ Area</label>
+                <div class="col-sm-7">
+                  <input type="text" value="R. Ketua" disabled>
                 </div>
               </div>
-              <!-- /.table-responsive -->
-            </div> 
-          </div>
-          <!-- /.card -->
-
-          <!-- /.card -->
-        </div>
-        <!-- /.col-md-6 -->
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Kasubbag TUK</h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                  <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                  <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-lte-toggle="card-remove">
-                  <i class="bi bi-x-lg"></i>
-                </button>
-              </div>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body p-0">
-              <div class="table-responsive">
-                <div style="height: 250px; padding: 10px; overflow: auto; transform: translate(0, 0);">
-
+              <div class="mb-3 row">
+                <label class="col-sm-3 text-sm-end">Tanggal</label>
+                <div class="col-sm-7">
+                  <input type="date" name="tanggal" id="tanggal" class="form-control form-control-sm" required>
                 </div>
               </div>
+              <div class="mb-3 row">
+                <label class="col-sm-3 text-sm-end">Nama Petugas</label>
+                <div class="col-sm-7">
+                  <input type="text" name="petugas" id="petugas" class="form-control form-control-sm">
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label class="col-sm-3 text-sm-end">Pekerjaan yang dilakukan</label>
+                <div class="col-sm-7">
+                  <script type="text/javascript">
+                    function toggle(source) {
+                        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                        for (var i = 0; i < checkboxes.length; i++) {
+                            if (checkboxes[i] != source)
+                                checkboxes[i].checked = source.checked;
+                        }
+                    }
+                  </script>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"  onclick="toggle(this);">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Pilih Semua</label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" name="pekerjaan_dilakukan[]" type="checkbox" value="Penyapuan Lantai" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Penyapuan Lantai
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" name="pekerjaan_dilakukan[]" type="checkbox" value="Pengepelan Lantai" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                      Pengepelan Lantai
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" name="pekerjaan_dilakukan[]" type="checkbox" value="Pembuangan Sampah" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">
+                      Pembuangan Sampah
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" name="pekerjaan_dilakukan[]" type="checkbox" value="Pengelapan kaca/Jendela" id="defaultCheck4">
+                    <label class="form-check-label" for="defaultCheck4">
+                      Pengelapan kaca/Jendela
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" name="pekerjaan_dilakukan[]" type="checkbox" value="Pembersihan Sarang Laba-laba" id="defaultCheck5">
+                    <label class="form-check-label" for="defaultCheck5">
+                     Pembersihan Sarang Laba-laba
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" name="pekerjaan_dilakukan[]" type="checkbox" value="Pengelapan railing besi" id="defaultCheck6">
+                    <label class="form-check-label" for="defaultCheck6">
+                    Pengelapan railing besi
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" name="pekerjaan_dilakukan[]" type="checkbox" value="Pencucian Peralatan makan dan minum" id="defaultCheck7">
+                    <label class="form-check-label" for="defaultCheck7">
+                    Pencucian Peralatan makan dan minum
+                    </label>
+                  </div> 
+              </div>
+              </div>
+              <div class="mb-3 row">
+                <label class="col-sm-3 text-sm-end">Keterangan</label>
+                <div class="col-sm-7">
+                  <textarea class="form-control form-control-sm" name="keterangan" id="keterangan"></textarea>
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label class="col-sm-3 text-sm-end"></label>
+                <div class="col-sm-7">
+                  <input type="submit" class="btn btn-sm btn-primary" value="Simpan">
+                </div>
+              </div>
+
+                   </form>
               <!-- /.table-responsive -->
             </div>
             <!-- /.card-footer -->
           </div>
         </div>
-        <!-- /.card -->
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">PPK  </h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                  <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                  <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-lte-toggle="card-remove">
-                  <i class="bi bi-x-lg"></i>
-                </button>
-              </div>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body p-0">
-              <div class="table-responsive">
-
-                <div style="height: 250px; padding: 10px; overflow: auto; transform: translate(0, 0);">
-
-                </div>
-              </div>
-              <!-- /.table-responsive -->
-            </div> 
-          </div>
-          <!-- /.card -->
-
-          <!-- /.card -->
-        </div>
-        <!-- /.col-md-6 -->
 
         <!-- /.card -->
 
@@ -410,7 +425,7 @@
          <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">Nama Ruang/ Lokasi</label>
           
-          <select name="lokasi[]" class="form-select" aria-label="Default select example" id="tambah_laporan_kebersihan_id"data-clearable="true" data-searchable="true" data-no-results-text="Tidak ditemukan" multiple>
+          <select name="lokasi[]" class="form-select" aria-label="Default select example" id="tambah_laporan_kebersihan_id"data-clearable="true" data-searchable="true" data-no-results-text="Tidak ditemukan"  data-position="up" multiple>
             <option value="">Pilih Ruangan / Lokasi</option>
             <option value="1">R. Ketua</option>
             <option value="2">R. Wakil Ketua</option>
@@ -432,7 +447,7 @@
 <link rel="stylesheet" href="assets/use-bootstrap-select-2.2.0/use-bootstrap-select.min.css">
 <script src="assets/use-bootstrap-select-2.2.0/use-bootstrap-select.min.js"></script>
 <script type="text/javascript">
-   const example = new UseBootstrapSelect(document.getElementById('tambah_laporan_kebersihan_id'))
+   const example = new UseBootstrapSelect(document.getElementById('pekerjaan_dilakukan'))
 </script>
       </main>
       <!--end::App Main-->

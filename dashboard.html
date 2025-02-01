@@ -1,36 +1,43 @@
 
-        <!--begin::App Content Header-->
-        <div class="app-content-header">
-          <!--begin::Container-->
-          <div class="container-fluid">
-            <!--begin::Row-->
-            <div class="row">
-              <div class="col-sm-6"><h3 class="mb-0">Dashboard</h3></div>
-              <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-end">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                </ol>
-              </div>
-            </div>
-            <!--end::Row-->
+<!--begin::App Content Header-->
+<div class="app-content-header">
+  <!--begin::Container-->
+  <div class="container-fluid">
+    <!--begin::Row-->
+    <div class="row">
+      <div class="col-sm-6">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+        </ol>
+      </div>
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="form-group">
+
+            <button class="btn btn-sm btn-primary  float-sm-end"  data-bs-toggle="modal" data-bs-target="#modal_kebersihan"><i class="nav-icon bi bi-emoji-heart-eyes"></i> Tambah Pelaksanaan Kebersihan</button>
+            <button class="btn btn-sm btn-danger  float-sm-end"   style="margin-right:5px"   data-bs-toggle="modal" data-bs-target="#modal_laporan_kerusakan"><i class="nav-icon bi bi-envelope-plus"></i> Tambah Laporan Kerusakan</button></div>
           </div>
-          <!--end::Container-->
         </div>
-        <!--end::App Content Header-->
-        <!--begin::App Content-->
-        <div class="app-content">
-          <!--begin::Container-->
-          <div class="container-fluid">
-            <!--begin::Row-->
-            <!--end::Row-->
-            <!--begin::Row-->
-            
-    <div class="row mb-3">
-        <div class="col-md-6">
+      </div>
+      <!--end::Row-->
+    </div>
+    <!--end::Container-->
+  </div>
+  <!--end::App Content Header-->
+  <!--begin::App Content-->
+  <div class="app-content">
+    <!--begin::Container-->
+    <div class="container-fluid">
+      <!--begin::Row-->
+      <!--end::Row-->
+      <!--begin::Row-->
+
+      <div class="row mb-3">
+        <div class="col-md-4 mb-3">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Pemohon Izin/ Cuti belum tandatangan</h3>
+              <h3 class="card-title">Tata Usaha dan Keuangan</h3>
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
                   <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
@@ -45,13 +52,7 @@
             <div class="card-body p-0">
               <div class="table-responsive">
                 <div style="height: 250px; padding: 10px; overflow: auto; transform: translate(0, 0);" id="pemohon_belum_ttd">
-                  <?php
-                    $sql="SELECT data_surat_izin_cuti.*, convert_tanggal_indonesia(permohonan_tanggal) AS tgl FROM data_surat_izin_cuti WHERE proses_id=1";
-                    $tampil=mysqli_query($Open,$sql);
-                    while($data=mysqli_fetch_array($tampil)){
-                      echo "<p><a href='dashboard?page=detail-permohonan-cuti&id=".base64_encode($data["id"])."'>".$data["pemohon_cuti_nama"]."<br> belum menandatangani Permohonan ".$data["jenis_cuti"]." tanggal ".$data["tgl"]."</a></p>";
-                    }
-                  ?>
+
                 </div>
               </div>
               <!-- /.table-responsive -->
@@ -62,10 +63,10 @@
           <!-- /.card -->
         </div>
         <!-- /.col-md-6 -->
-        <div class="col-md-6">
+        <div class="col-md-4 mb-3">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Kepegawaian belum Verifikasi Cuti </h3>
+              <h3 class="card-title">Kasubbag TUK</h3>
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
                   <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
@@ -80,13 +81,7 @@
             <div class="card-body p-0">
               <div class="table-responsive">
                 <div style="height: 250px; padding: 10px; overflow: auto; transform: translate(0, 0);">
-                  <?php
-                    $sql="SELECT data_surat_izin_cuti.*, convert_tanggal_indonesia(permohonan_tanggal) AS tgl FROM data_surat_izin_cuti WHERE proses_id=3";
-                    $tampil=mysqli_query($Open,$sql);
-                    while($data=mysqli_fetch_array($tampil)){
-                      echo "<p><a href='dashboard?page=detail-permohonan-cuti&id=".base64_encode($data["id"])."'>Kepegawaian belum memverifikasi Permohonan ".$data["jenis_cuti"]." A.n ".$data["pemohon_cuti_nama"]." tanggal ".$data["tgl"]."</a></p>";
-                    }
-                  ?>
+
                 </div>
               </div>
               <!-- /.table-responsive -->
@@ -95,13 +90,10 @@
           </div>
         </div>
         <!-- /.card -->
-
-      </div>
-      <div class="row mb-3">
-        <div class="col-md-6">
+        <div class="col-md-4 mb-3">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Menunggu Pertimbangan Atasan Langsung</h3>
+              <h3 class="card-title">PPK  </h3>
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
                   <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
@@ -117,20 +109,7 @@
               <div class="table-responsive">
 
                 <div style="height: 250px; padding: 10px; overflow: auto; transform: translate(0, 0);">
-                  <?php
-                    $sql="SELECT data_surat_izin_cuti.*, convert_tanggal_indonesia(permohonan_tanggal) AS tgl FROM data_surat_izin_cuti WHERE proses_id=3";
-                    $tampil=mysqli_query($Open,$sql);
-                    while($data=mysqli_fetch_array($tampil)){
-                      echo "<p><a href='dashboard?page=detail-permohonan-cuti&id=".base64_encode($data["id"])."'>".$data["atasan_langsung_nama"]."<br> belum memberikan pertimbangan Permohonan ".$data["jenis_cuti"]." An. ".$data["pemohon_cuti_nama"]." tanggal ".$data["tgl"]."</a></p>";
-                    }
-                  ?>
-                  <?php
-                    $sql="SELECT  data_surat_ijin.*, convert_tanggal_indonesia(dari_tanggal) AS tgl FROM  data_surat_ijin WHERE  status IS NULL  AND   tanggal_pejabat IS NULL ";
-                    $tampil=mysqli_query($Open,$sql);
-                    while($data=mysqli_fetch_array($tampil)){
-                      echo "<p><a href='dashboard?page=detail-permohonan-izin&id=".base64_encode($data["id"])."'>".$data["pejabat_pemberi_izin_nama"]."<br> belum memberikan persetujuan Permohonan ".$data["izin_nama"]." An. ".$data["pemohon_izin_nama"]." tanggal ".$data["tgl"]."</a></p>";
-                    }
-                  ?>
+
                 </div>
               </div>
               <!-- /.table-responsive -->
@@ -141,44 +120,49 @@
           <!-- /.card -->
         </div>
         <!-- /.col-md-6 -->
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Menunggu Keputusan Pejabat Berwenang </h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                  <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                  <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-lte-toggle="card-remove">
-                  <i class="bi bi-x-lg"></i>
-                </button>
-              </div>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body p-0">
-              <div class="table-responsive">
-                <div style="height: 250px; padding: 10px; overflow: auto; transform: translate(0, 0);">
-                  
-                  <?php
-                    $sql="SELECT data_surat_izin_cuti.*, convert_tanggal_indonesia(permohonan_tanggal) AS tgl FROM data_surat_izin_cuti WHERE proses_id=4";
-                    $tampil=mysqli_query($Open,$sql);
-                    while($data=mysqli_fetch_array($tampil)){
-                      echo "<p><a href='dashboard?page=detail-permohonan-cuti&id=".base64_encode($data["id"])."'>".$data["pejabat_berwenang_nama"]."<br> belum memberikan Keputusan Permohonan ".$data["jenis_cuti"]." An. ".$data["pemohon_cuti_nama"]." tanggal ".$data["tgl"]."</a></p>";
-                    }
-                  ?>
-                </div>
-              </div>
-              <!-- /.table-responsive -->
-            </div>
-            <!-- /.card-footer -->
-          </div>
-        </div>
+
         <!-- /.card -->
 
       </div>
-            <!-- /.row (main row) -->
-          </div>
-          <!--end::Container-->
+      <!-- /.row (main row) -->
+    </div>
+    <!--end::Container-->
+  </div>
+<!--end::App Content-->
+<!-- Modal -->
+<div class="modal fade" id="modal_kebersihan" tabindex="-1"  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Tambah Laporan Kebersihan</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Nama Ruang/ Lokasi</label>
+          <select class="form-select" aria-label="Default select example" id="tambah_laporan_kebersihan_id"data-clearable="true" data-searchable="true">
+            <option value="">Pilih Ruangan / Lokasi</option>
+            <option value="1">R. Ketua</option>
+            <option value="2">R. Wakil Ketua</option>
+            <option value="3">R. Sekretaris</option>
+            <option value="3">R. Panitera</option>
+          </select>
         </div>
-        <!--end::App Content-->
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+        <button type="button" class="btn btn-primary">Lanjutkan</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<link rel="stylesheet" href="node_modules/use-bootstrap-select/dist/use-bootstrap-select.min.css">
+<script src="node_modules/use-bootstrap-select/dist/use-bootstrap-select.min.js"></script>
+<script type="text/javascript">
+   const example = new UseBootstrapSelect(__('tambah_laporan_kebersihan_id'))
+</script>
