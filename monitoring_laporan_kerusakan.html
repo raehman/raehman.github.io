@@ -1,0 +1,127 @@
+<!--begin::App Content Header-->
+        <div class="app-content-header">
+          <!--begin::Container-->
+          <div class="container-fluid">
+            <!--begin::Row-->
+            <div class="row">
+              <div class="col-sm-6">
+                <ol class="breadcrumb ">
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item " aria-current="page"> Monitoring Laporan Kerusakan</li>
+                </ol></div>
+              <div class="col-sm-6">
+                <di class="breadcrumb float-sm-end">
+                  <button type="button" class="btn btn-sm btn-primary"> Cetak </button>
+                </div>
+              </div>
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+        <!--end::App Content Header-->
+        <!--begin::App Content-->
+        <div class="app-content">
+          <!--begin::Container-->
+          <div class="container-fluid">
+            <!--begin::Row-->
+            <div class="row">
+              <div class="col-12">
+                <!-- Default box -->
+                <div class="card">
+                  <div class="card-header">
+                    <div class="row">
+                                    <table cellpadding="2">
+                                      <tr>
+                                        <td style="width:90px"><select class="form-select form-select-sm" style="width:80px;" id="limit" onchange="load_data()">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                    <option value="500">500</option>
+                                    <option value="1000">1000</option>
+                                    </select> </td><td style="width:140px">Data perhalaman</td>
+                                        <td><input type="text" name="pencarian" class="form-control form-control-sm" id="pencarian" placeholder="Cari Nama Pelapor"  aria-describedby="button-cari"/></td>
+                                        <td>
+                                          <select class="form-select form-select-sm">
+                                            <option value="all_persetujuan_ktuk">Semua Persetujuan KTUK</option>
+                                            <option value="1">Disetujui KTUK</option>
+                                            <option value="0">Tidak Disetujui KTUK</option>
+                                          </select>
+                                        </td>
+                                        <td>
+                                          <select class="form-select form-select-sm">
+                                            <option value="all_persetujuan_ktuk">Semua Verifikasi PPK</option>
+                                            <option value="1">Disetujui PPK</option>
+                                            <option value="0">Tidak Disetujui PPK</option>
+                                          </select>
+                                        </td>
+                                        <td>
+                                          <select class="form-select form-select-sm">
+                                            <option value="all_persetujuan_ktuk">Semua Status</option>
+                                            <option value="1">Laporan</option>
+                                            <option value="2">Verifikasi TUK</option>
+                                            <option value="4">Persetujuan KTUK</option>
+                                            <option value="5">Persetujuan PPK</option>
+                                            <option value="6">Dalam Pengerjaan</option>
+                                            <option value="7">Selesai</option>
+                                          </select>
+                                        </td>
+                                        <td><button class="btn btn-sm btn-primary" id="button-cari" onclick="load_data()">Cari</button> </td>
+                                      </tr>
+                                    </table>
+                  </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive" id="tabel_data_rekap">
+
+                      <table class="table table-hover table-striped table-sm table-bordered " id="data_rekap">
+                          <thead>
+                              <tr>
+                                  <th class="align-middle text-left">No</th>
+                                  <th class="align-middle text-left">Tanggal</th>
+                                  <th class="align-middle text-left">Nama Pelapor<br>Jabatan</th>
+                                  <th>Nama BMN<br>Lokasi<br>Jenis Kerusakan</th>
+                                  <th class="align-middle text-left">Verifikasi TUK</th>
+                                  <th class="align-middle text-left">Persetujuan<br>Kasubag TUK</th>
+                                  <th class="align-middle text-left">Verifikasi PPK</th>
+                                  <th class="align-middle text-left">Status</th>
+                                  <th style="width:20px"></th>
+
+                              </tr>
+                          </thead>
+                          <tbody>
+<tr>
+  <td>1</td>
+  <td>1 Jan 2025</td>
+  <td>FATHUL MUJIB, S.H., M.H.<br>Hakim</td>
+  <td>Rumah Dinas<br>Jalan Cempaka<br>Genteng Bocor</td>
+  <td>1 Jan 2025</td>
+  <td>Disetujui<br>2 Jan 2025</td>
+  <td>Disetujui<br>3 Jan 2025</td>
+  <td>Dalam Pengerjaan</td><td class='text-center' ><span class='text-primary' style='cursor:pointer'  onclick='view_barang()'>Detail</span></td></tr>
+
+
+
+                                </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                  
+                  <!-- /.card-footer-->
+                </div>
+                <!-- /.card -->
+              </div>
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+        <!--end::App Content-->
+        <script type="text/javascript">
+          document.addEventListener("DOMContentLoaded", function() {
+  __("loading").style.display="none";
+  alert("ya");
+});
+        </script>
